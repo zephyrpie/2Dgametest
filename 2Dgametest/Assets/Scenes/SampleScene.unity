@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857915209a2295e4ba3813307edc3820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   deceleration: 15
 --- !u!50 &2068451493
 Rigidbody2D:
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c117a2937c84a4e926ab829ca9d0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  jumpForce: 7
   groundCheck: {fileID: 900865902}
 --- !u!114 &2068451498
 MonoBehaviour:
@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 10
-  dashTime: 0.4
+  dashTime: 0.25
   dashCooldown: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
