@@ -5,30 +5,44 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4f;
-    public float deceleration = 15f;
+    public float airDeceleration = 2f;
+    public float groundDeceleration = 10f;
+    public GroundCheck groundCheck;
+    private Vector3 originalScale;
+
     private Rigidbody2D rb;
     private float moveInput;
-    private float currentSpeed = 0f;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalScale = transform.localScale;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float targetSpeed = Input.GetAxisRaw("Horizontal") * speed;
-
-        if(targetSpeed != 0){
-            currentSpeed = targetSpeed;
-        } else {
-            currentSpeed = Mathf.MoveTowards(currentSpeed, 0, deceleration * Time.deltaTime);
-        }
+        moveInput = Input.GetAxisRaw("Horizontal");
     }
 
-    void FixedUpdate(){
-        rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
+    void FixedUpdate()
+    {
+        Vector2 velocity = rb.velocity;
+
+        if(moveInput != 0)
+        {
+            velocity.x = moveInput * speed;
+        } else {
+            float decel = groundCheck.isGrounded ? groundDeceleration : airDeceleration;
+            velocity.x = Mathf.MoveTowards(rb.velocity.x, 0, decel * Time.fixedDeltaTime);
+        }
+
+        rb.velocity = velocity;
+
+        if (moveInput > 0){
+            transform.localScale = new Vector3(Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        } else if (moveInput < 0){
+            transform.localScale = new Vector3(-Mathf.Abs(originalScale.x), originalScale.y, originalScale.z);
+        }
+
     }
 }

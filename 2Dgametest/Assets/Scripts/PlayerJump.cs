@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    public float jumpForce = 7f;
+    public float jumpForce = 15f;
     public GroundCheck groundCheck;
     private Rigidbody2D rb;
+
     
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,7 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded)
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded){
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
