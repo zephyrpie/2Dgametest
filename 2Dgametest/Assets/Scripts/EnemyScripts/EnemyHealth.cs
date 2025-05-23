@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public int health = 5;
+    
     private SpriteRenderer spriteRenderer;
+
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         health -= amount;
         StartCoroutine(FlashRed());
+
 
         if (health <= 0)
         {

@@ -679,7 +679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4857025827709677252, guid: 6b9ab9dcd35c160479964f4997f9cbac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7544811692158326869, guid: 6b9ab9dcd35c160479964f4997f9cbac, type: 3}
       propertyPath: m_Name
@@ -1278,6 +1278,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4857025827709677252, guid: 6b9ab9dcd35c160479964f4997f9cbac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857025827709677252, guid: 6b9ab9dcd35c160479964f4997f9cbac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.72
+      objectReference: {fileID: 0}
     - target: {fileID: 7219600436573605972, guid: 6b9ab9dcd35c160479964f4997f9cbac, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 1.5
@@ -1422,6 +1430,7 @@ GameObject:
   - component: {fileID: 2135669822790897346}
   - component: {fileID: 1639864011759228181}
   - component: {fileID: 8944946823531035807}
+  - component: {fileID: 8944946823531035808}
   m_Layer: 0
   m_Name: Enemy Dummy
   m_TagString: Enemy
@@ -1888,7 +1897,7 @@ Transform:
   m_GameObject: {fileID: 1916295365081496733}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.85, y: -3.58, z: 0}
+  m_LocalPosition: {x: 4.53, y: -0.15, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1910,6 +1919,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCheck: {fileID: 1567935092}
   attackCooldown: 1
+--- !u!114 &8944946823531035808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916295365081496733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa946900e58c73641be51236919c7673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
